@@ -427,4 +427,4 @@ def my_collate_fn(batch):
 
 
 if __name__ == "__main__":
-   print(test)
+   print("test")
