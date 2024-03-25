@@ -196,33 +196,4 @@ def zip_folder(file_name: str, target_dir: str) -> str:
 
 
 if __name__ == "__main__":
-    # e.g. python ./util/ftpInFlyte.py insert_timestamp
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "get_file_type":
-            ext, mimetype = get_file_type(
-                "/work/nsd_aiml/users/beizhang/workspace/Finetuning/data/sample_cfam_cb007487_cp1.txt"
-            )
-            print(f"ext:{ext} mimetype:{mimetype}")
-        elif sys.argv[1] == "insert_timestamp":
-            new_file = insert_timestamp("sample_cfam_cb007487_cp1.txt")
-            print(new_file)
-        elif sys.argv[1] == "relative_path":
-            cwd = os.getcwd()
-            model_dir = "/workspace/firstproject/firstproject/tmp/flan-t5-base"
-            # Calculate relative path
-            relative_model_dir = "./" + os.path.relpath(model_dir, cwd)
-            print(relative_model_dir)
-        elif sys.argv[1] == "upload_file":
-            remote_path = "/work/nsd_aiml/users/beizhang/workspace/temp"
-            local_file = "./data/ft_data.json"
-            if not os.path.exists(local_file):
-                print(f"{local_file} is not existed\n")
-            else:
-                upload_file(remote_path, local_file)
-        else:
-            remote_path = "/work/nsd_aiml/users/beizhang/workspace/temp"
-            local_path = "./data"
-            upload_all_files(remote_path, local_path)
-    else:
-        print("give one of following command:\n ")
-        print()
+    print("test")
