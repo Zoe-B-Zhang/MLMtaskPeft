@@ -418,25 +418,3 @@ def peft_task(model_name, model_dir, token_json_file, data_json_file, if_w_mask)
 
 if __name__ == "__main__":
     print("test")
-    token_json_file = "/workspace/data/add_tokens.json"
-
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "1":
-            data_json_file = "../peft/3gppterms_ft_w_masks_ft.json"
-            model_dir = "../gemma-7b"
-            model_name = "gemma"
-            if_w_mask = True
-        else:
-            model_dir = "/workspace/model/google/flan-t5-base"
-            data_json_file = "/workspace/data/ft_data.json"
-            model_name = "t5"
-            if_w_mask = False
-        print(
-            f"data_json_file:{data_json_file},token_json_file:{token_json_file},model_name:{model_name}, if_w_mask:{if_w_mask}"
-        )
-
-        output_path, directory_size = peft_task(
-            model_name, model_dir, token_json_file, data_json_file, if_w_mask
-        )
-    else:
-        print("give your choice pls ")
